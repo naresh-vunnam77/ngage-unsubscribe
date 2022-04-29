@@ -1,0 +1,207 @@
+/*------ Base styles ------*/
+body {
+  background: #f7f8f9;
+  font-family: arial;
+  background-color: #d8c77b;
+  text-rendering : optimizeLegibility;
+  -webkit-font-smoothing : antialiased;
+}
+
+
+.container {
+  max-width: 500px;
+  max-height: 700px;
+  margin: 50px auto;
+  padding: 60px;
+  padding-bottom: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 15px 15px -12px rgba(0,0,0,0.09);
+  overflow: hidden;
+}
+.link{
+  
+  text-decoration: none;
+  padding: 5px 5px;
+  font-weight: bold;
+  color: #f04343;
+  border: none;
+  margin: 5px;
+  margin-right: 20px;
+}
+
+.btn {
+  background-color: #c6a81e;
+  text-decoration: none;
+  padding: 15px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+}
+
+.btn-light {
+  background-color: #eee;
+  color: #222;
+}
+
+.btn:hover{
+  opacity: 0.8;
+}
+
+h2 {
+  margin-top: 0px;
+  margin: 5;
+  padding: 0;
+  color: #444;
+}
+
+p {
+  margin-top: 10px;
+  line-height: 24px;
+  margin-bottom: 10px;
+  color: #888;
+}
+
+/*------ Main Emoji Styling ------*/
+
+.emoji {
+  box-sizing: border-box;
+  margin: 0px 150px 0px;
+  width: 120px;
+  height: 120px;
+  display: none;
+}
+
+.face {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 15px 30px 0;
+  border-radius: 50%;
+  background: #F2DD68;
+  transition: 1s;
+}
+
+.face:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -8px;
+  left: -8px;
+  border-radius: 50%;
+  box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 0.07);
+}
+
+.eye {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 30px;
+  left: 18px;
+  z-index: 1;
+  border-radius: 50%;
+  background: #995710;
+}
+
+.eye:last-child {
+  left: auto;
+  right: 18px;
+}
+
+.emoji .eyed {
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+
+@keyframes blink {
+  10% {
+    height: 10px;
+    top: 32px;
+  }
+  20% {
+    height: 0.5px;
+    top: 37px;
+  }
+  50% {
+    height: 10px;
+    top: 32px;
+  }
+}
+
+.mouth {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 70px;
+  height: 34px;
+  margin: 0 auto;
+  border-radius: 0 0 70px 70px;
+  overflow: hidden;
+  background: #995710;
+  transition: 0.3s;
+}
+
+.mouth:before,
+.mouth:after {
+  content: '';
+  position: absolute;
+  display: block;
+}
+#message{
+  margin-top: 10px;
+  line-height: 24px;
+  margin-bottom: 10px;
+  color: #888;
+}
+#mobileNbr{
+  font-weight: bold;
+  color: #222;
+}
+
+
+/*------ Shocked Emoji Styling ------*/
+
+.shocked .mouth {
+  top: 55px;
+  z-index: 1;
+  width: 50px;
+  height: 25px;
+  margin: 0 auto;
+  border-radius: 70px 70px 0px 0px;
+  overflow: hidden;
+  background: #995710;
+}
+
+@media only screen and (max-width: 600px) {
+  .container{
+    width: 90vw;
+  }
+  .emoji{
+    margin-left: 30px;
+  }
+  h2{
+    font-size: 16px;
+  }
+  p{
+    font-size: 12;
+  }
+  #link{
+    margin-right: 10px;
+  }
+  #mobileNbr{
+    font-size: 14;
+  }
+  #message{
+    font-size: 12;
+  }
+}
